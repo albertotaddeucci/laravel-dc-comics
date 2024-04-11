@@ -3,6 +3,9 @@
 @section('content')
 
 <div class="container py-5">
+
+<h1 class="pb-3">Fumetti</h1>
+
     
     <ul class="list-group">
         @foreach ($comics as $comic)  

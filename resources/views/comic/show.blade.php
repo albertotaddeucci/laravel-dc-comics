@@ -5,17 +5,23 @@
 <div class="container py-5">
     
     <div class="row align-items-center">
-        <div class="col">
+        <div class="col text-center">
+            <img src="{{$comic->thumb}}" class="img-fluid" style="width: 200px" alt="">
+        </div>
+        <div class="col text-center">
             <h2>{{$comic->title}}</h2>
 
         </div>
-        <div class="col">
-            <img src="{{$comic->thumb}}" class="img-fluid" style="width: 200px" alt="">
-        </div>
     </div>
     <hr>
+    
+    <div class="row justify-content-center py-5">
+        <div class="col-6">
 
-    <p>{{$comic->description}}</p>
+            <p>{{$comic->description}}</p>
+        </div>
+    </div>
+
 </div>
     
 @endsection

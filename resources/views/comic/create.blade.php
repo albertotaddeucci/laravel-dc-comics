@@ -29,7 +29,7 @@
         </div>
         <div class="mb-3">
             <label for="sale_date" class="form-label">Giorno di vendita</label>
-            <input class="form-control" id="sale_date" name="sale_date"></input>
+            <input type="date" class="form-control" id="sale_date" name="sale_date"></input>
         </div>
         <div class="mb-3">
             <label for="type" class="form-label">Tipologia</label>
