@@ -17,7 +17,7 @@ class ComicController extends Controller
 
         // dd($comics);
 
-        return view('layouts.comic.index', compact('comics'));
+        return view('comic.index', compact('comics'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('layouts.comic.create');
+        return view('comic.create');
     }
 
     /**
@@ -35,17 +35,19 @@ class ComicController extends Controller
     {
         $newComic = new Comic();
 
-        // $newComic->title = $request->title;
-        // $newComic->description = $request->description;
-        // $newComic->type = $request->type;
-        // $newComic->src = $request->src;
-        // $newComic->cooking_time = $request['cooking-time'];
-        // $newComic->weight = $request->weight;
+        $newComic->title = $request->title;
+        $newComic->description = $request->description;
+        $newComic->thumb = $request->thumb;
+        $newComic->price = $request->price;
+        $newComic->series = $request->series;
+        $newComic->sale_date = $request->sale_date;
+        $newComic->type = $request->type;
+        $newComic->artists = $request->artists;
+        $newComic->writers = $request->writers;
 
         $newComic->save();
 
-        // spostiamo l'utente nella index
-        return redirect()->route('layouts.comic.index');
+        return redirect()->route('comics.index');
     }
 
     /**
@@ -53,7 +55,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        return view('layouts.comic.show', compact('comic'));
+        return view('comic.show', compact('comic'));
     }
 
     /**
