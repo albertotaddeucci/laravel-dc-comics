@@ -25,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.comic.create');
     }
 
     /**
@@ -33,15 +33,27 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newComic = new Comic();
+
+        // $newComic->title = $request->title;
+        // $newComic->description = $request->description;
+        // $newComic->type = $request->type;
+        // $newComic->src = $request->src;
+        // $newComic->cooking_time = $request['cooking-time'];
+        // $newComic->weight = $request->weight;
+
+        $newComic->save();
+
+        // spostiamo l'utente nella index
+        return redirect()->route('layouts.comic.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Comic $comic)
     {
-        //
+        return view('layouts.comic.show', compact('comic'));
     }
 
     /**

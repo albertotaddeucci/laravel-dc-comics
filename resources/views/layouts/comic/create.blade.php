@@ -9,7 +9,7 @@
         <li class="list-group-item">
             <div class="row">
                 <div class="col">{{$comic->title}}</div>
-                <div class="col text-end"><a href="{{route('comics.show', $comic->id)}}">Esplora</a></div>
+                <div class="col text-end"><a href="">Esplora</a></div>
             </div>
         </li>
         
