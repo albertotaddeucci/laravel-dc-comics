@@ -4,6 +4,7 @@
 
 @section('content')
 
-{{-- content here --}}
+{{-- content here --}}`
+<h1>Fumetti</h1>
 
 @endsection
