@@ -16,10 +16,10 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title', 100);
             $table->text('description')->nullable();
-            $table->string('thumb', 500)->nullable();
-            $table->decimal('price');
+            $table->text('thumb')->nullable();
+            $table->string('price', 50);
             $table->string('series', 100)->nullable();
-            $table->date('sale_date');
+            $table->string('sale_date', 50);
             $table->string('type', 50);
             $table->text('artists');
             $table->text('writers');
