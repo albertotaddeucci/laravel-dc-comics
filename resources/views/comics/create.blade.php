@@ -28,7 +28,7 @@
             <input class="form-control" id="series" name="series"></input>
         </div>
         <div class="mb-3">
-            <label for="sale_date" class="form-label">Giorno di vendita</label>
+            <label for="sale_date" class="form-label">Giorno di pubblicazione</label>
             <input type="date" class="form-control" id="sale_date" name="sale_date"></input>
         </div>
         <div class="mb-3">
