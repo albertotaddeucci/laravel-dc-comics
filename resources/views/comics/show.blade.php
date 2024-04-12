@@ -22,6 +22,8 @@
         </div>
     </div>
 
+    <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-warning">Modifica</a>
+
 </div>
     
 @endsection

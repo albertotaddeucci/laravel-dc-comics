@@ -17,7 +17,7 @@ class ComicController extends Controller
 
         // dd($comics);
 
-        return view('comic.index', compact('comics'));
+        return view('comics.index', compact('comics'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('comic.create');
+        return view('comics.create');
     }
 
     /**
@@ -55,23 +55,36 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        return view('comic.show', compact('comic'));
+        return view('comics.show', compact('comic'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+
+        $comic->title = $request->title;
+        $comic->description = $request->description;
+        $comic->thumb = $request->thumb;
+        $comic->price = $request->price;
+        $comic->series = $request->series;
+        $comic->sale_date = $request->sale_date;
+        $comic->type = $request->type;
+        $comic->artists = $request->artists;
+        $comic->writers = $request->writers;
+
+        $comic->save();
+
+        return redirect()->route('comics.index', $comic->id);
     }
 
     /**
