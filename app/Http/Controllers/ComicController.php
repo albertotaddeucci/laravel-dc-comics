@@ -111,7 +111,7 @@ class ComicController extends Controller
             'thumb' => 'nullable',
             'price' => 'required|max:50',
             'series' => 'nullable|max:100',
-            'sale_date' => 'required',
+            'sale_date' => 'required|date',
             'type' => 'required|max:50',
             'artists' => 'required|max:200',
             'writers' => 'required|max:200'
@@ -128,6 +128,7 @@ class ComicController extends Controller
             'series.max' => 'Deve avere un massimo di :max caratteri',
 
             'sale_date.required' => 'Devi inserire la data',
+            'sale_date.date' => 'Devi inserire una data nel formato YYYY-mm-dd',
 
             'type.required' => 'Devi inserire il tipo',
             'type.max' => 'Deve avere un massimo di :max caratteri',
