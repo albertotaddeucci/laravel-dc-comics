@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\VarDumper\VarDumper;
 
 class ComicController extends Controller
@@ -33,6 +34,9 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validation($request->all());
+
         $newComic = new Comic();
 
         $newComic->title = $request->title;
@@ -71,6 +75,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $this->validation($request->all());
+
 
         $comic->title = $request->title;
         $comic->description = $request->description;
@@ -95,5 +101,44 @@ class ComicController extends Controller
         $comic->delete();
 
         return redirect()->route('comics.index');
+    }
+
+    public function validation($data)
+    {
+        $validator = Validator::make($data, [
+            'title' => 'required|max:100',
+            'description' => 'nullable|max:300',
+            'thumb' => 'nullable',
+            'price' => 'required|max:50',
+            'series' => 'nullable|max:100',
+            'sale_date' => 'required',
+            'type' => 'required|max:50',
+            'artists' => 'required|max:200',
+            'writers' => 'required|max:200'
+        ], [
+
+            'title.required' => "Devi inserire un titolo",
+            'title.max' => 'Deve avere un massimo di :max caratteri',
+
+            'description.max' => 'Deve avere un massimo di :max caratteri',
+
+            'price.required' => 'Devi inserire il prezzo',
+            'price.max' => 'Deve avere un massimo di :max caratteri',
+
+            'series.max' => 'Deve avere un massimo di :max caratteri',
+
+            'sale_date.required' => 'Devi inserire la data',
+
+            'type.required' => 'Devi inserire il tipo',
+            'type.max' => 'Deve avere un massimo di :max caratteri',
+
+            'artists.required' => 'Devi inserire uno o più artisti',
+            'artists.max' => 'Deve avere un massimo di :max caratteri',
+
+            'writers.required' => 'Devi inserire uno o più scrittori',
+            'writers.max' => 'Deve avere un massimo di :max caratteri',
+
+
+        ])->validate();
     }
 }
