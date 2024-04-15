@@ -3,7 +3,16 @@
 @section('content')
 
 <div class="container">
-    <h2 class="py-5">Aggiungi fumetto</h2>
+    <div class="row align-content-center py-5">
+        <div class="col-6">
+            <h2 class="">Aggiungi un fumetto</h2>
+
+        </div>
+        <div class="col-6">
+            <a href="{{route('comics.index')}}" >Torna all'indice</a>
+
+        </div>
+    </div
     <form action="{{route('comics.store')}}" method="POST">
         @csrf
     

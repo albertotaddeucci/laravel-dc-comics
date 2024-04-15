@@ -3,7 +3,16 @@
 @section('content')
 
 <div class="container">
-    <h2 class="py-5">Modifica il fumetto</h2>
+    <div class="row align-content-center py-5">
+        <div class="col-6">
+            <h2 class="">Modifica il fumetto</h2>
+
+        </div>
+        <div class="col-6">
+            <a href="{{route('comics.index')}}" >Torna all'indice</a>
+
+        </div>
+    </div>
     <form action="{{route('comics.update' , $comic->id)}}" method="POST">
         @csrf
         @method('PUT')
@@ -28,8 +37,8 @@
         </div>
         <div class="mb-3">
             <label for="thumb" class="form-label">Immagine</label>
-            <input class="form-control @error('src') is-invalid @enderror" id="thumb" name="thumb" value="{{ old('src') ?? $comic->src}}"></input>
-            @error('src')
+            <input class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{ old('thumb') ?? $comic->thumb}}"></input>
+            @error('thumb')
             <div class="invalid-feedback">
                 {{$message}}
             </div>
