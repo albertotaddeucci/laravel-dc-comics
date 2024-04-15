@@ -12,7 +12,7 @@
             <a href="{{route('comics.index')}}" >Torna all'indice</a>
 
         </div>
-    </div
+    </div>
     <form action="{{route('comics.store')}}" method="POST">
         @csrf
     
