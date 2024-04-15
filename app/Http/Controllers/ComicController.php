@@ -107,7 +107,7 @@ class ComicController extends Controller
     {
         $validator = Validator::make($data, [
             'title' => 'required|max:100',
-            'description' => 'nullable|max:300',
+            'description' => 'nullable|max:1000',
             'thumb' => 'nullable',
             'price' => 'required|max:50',
             'series' => 'nullable|max:100',
