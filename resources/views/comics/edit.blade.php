@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row align-content-center py-5">
         <div class="col-6">
-            <h2 class="">Modifica il fumetto</h2>
+            <h2 >Modifica il fumetto</h2>
 
         </div>
         <div class="col-6">
