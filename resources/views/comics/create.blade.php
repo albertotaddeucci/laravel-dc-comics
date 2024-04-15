@@ -36,8 +36,8 @@
         </div>
         <div class="mb-3">
             <label for="thumb" class="form-label">Immagine</label>
-            <input class="form-control @error('src') is-invalid @enderror" id="thumb" name="thumb" value="{{old('src')}}"></input>
-            @error('src')
+            <input class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{old('thumb')}}"></input>
+            @error('thumb')
             <div class="invalid-feedback">
                 {{$message}}
             </div>
@@ -45,7 +45,7 @@
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{old('description')}}"></input>
+            <input class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{old('price')}}"></input>
             @error('price')
             <div class="invalid-feedback">
                 {{$message}}
