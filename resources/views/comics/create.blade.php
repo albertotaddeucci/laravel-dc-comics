@@ -63,7 +63,7 @@
         </div>
         <div class="mb-3">
             <label for="sale_date" class="form-label">Giorno di pubblicazione</label>
-            <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date" value="{{old('sale_date')}}" required></input>
+            <input type="date" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date" value="{{old('sale_date')}}" required></input>
             @error('sale_date')
             <div class="invalid-feedback">
                 {{$message}}
